@@ -1,8 +1,9 @@
+# Overview Campus Course & Records Manager (CollegeDuddy)
 A Java-based terminal application designed to efficiently manage student records and course data within a campus environment. This project provides a structured and scalable way to handle academic information such as student details, course listings, and enrollments.
 
 # Overview
 
-Campus Course & Records Manager (AcadSync) is a lightweight academic management system built using Java. It is designed to simulate how universities manage student-course relationships using structured data and modular programming.
+Campus Course & Records Manager is a lightweight academic management system built using Java. It is designed to simulate how universities manage student-course relationships using structured data and modular programming.
 
 The system allows users to:
 
