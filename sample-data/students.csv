@@ -1,3 +1,6 @@
-id,regNo,fullName,email,status,createdAt
-1,24BEC10013,Eshaan Abrol,eshaanabrol@gmail.com,ACTIVE,2025-09-19
-2,24BEY10065,Aanchal Pandey,aanchal@example.com,ACTIVE,2025-09-19
+id,name,email,phone
+24BEC10013,Eshaan Abrol,eshaanabrol@gmail.com,9876543210
+24BEC10014,Aanchal Pandey,aanchal@example.com,9876543211
+24BEC10015,Rahul Sharma,rahul@example.com,9876543212
+24BEC10016,Priya Singh,priya@example.com,9876543213
+24BEC10017,Amit Kumar,amit@example.com,9876543214
