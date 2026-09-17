@@ -134,6 +134,7 @@ public class Main {
         System.out.println("\n-- Reports --");
         System.out.println("Total students: " + studentService.listAll().size());
         System.out.println("Total courses: " + courseService.listAll().size());
+        System.out.println("Active students: " + studentService.listActive().size());
         System.out.println("Top 3 students by GPA:");
         studentService.getTopStudents(3).forEach(s -> System.out.println("  " + s));
     }
@@ -142,3 +143,4 @@ public class Main {
         System.out.println("Java SE is used for this project. See README for details.");
     }
 }
+
