@@ -19,6 +19,7 @@ public class CourseService {
         return course;
     }
 
+    /** Returns all courses currently in the system. */
     public List<Course> listAll(){
         return new ArrayList<>(ds.getCourses().values());
     }
@@ -62,4 +63,5 @@ public class CourseService {
         return ds.getCourses().values().stream().mapToInt(Course::getCredits).sum();
     }
 }
+
 
