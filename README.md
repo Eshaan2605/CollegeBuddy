@@ -1,6 +1,6 @@
 # CollegeBuddy - Campus Course & Records Manager
 
-![Java](https://img.shields.io/badge/Java-17+-orange) ![Status](https://img.shields.io/badge/status-active-brightgreen)
+![Java](https://img.shields.io/badge/Java-17+-orange) ![Status](https://img.shields.io/badge/status-active-brightgreen) ![Version](https://img.shields.io/badge/version-1.1-blue)
 
 A Java SE console application for managing student records, course enrollments, and academic grades.
 
@@ -40,3 +40,4 @@ src/
 ## Author
 
 **Eshaan Abrol** (24BEC10013) - Electronics and Communication Engineering
+
