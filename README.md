@@ -126,3 +126,4 @@ VIT Bhopal University
 
 # License
 
+MIT 2026 *copyrighted*
