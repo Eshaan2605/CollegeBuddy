@@ -1,3 +1,5 @@
+![Java](https://img.shields.io/badge/Java-17+-orange) ![Status](https://img.shields.io/badge/status-active-brightgreen)
+
 # Campus Course & Records Manager (CollegeBuddy)
 
 A Java-based terminal application designed to efficiently manage student records and course data within a campus environment. This project provides a structured and scalable way to handle academic information such as student details, course listings, and enrollments.
@@ -155,3 +157,4 @@ This project is for educational purposes and can be freely used or modified.
 ## Support
 
 If you found this project helpful, consider giving it a star on GitHub.
+
