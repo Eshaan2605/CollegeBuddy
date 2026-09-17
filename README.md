@@ -20,7 +20,7 @@ The system allows users to:
 | Build Tool | Shell Script (compile.sh) |
 | IDE Support | VS Code (with launch configurations) |
 | Data Storage | CSV Files |
-| Platform | macOS / Linux terminal-based execution |
+| Platform | Microsoft Window 11 |
 
 # Project Structure
 
