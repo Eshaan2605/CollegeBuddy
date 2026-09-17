@@ -12,9 +12,11 @@ public class Student extends Person {
     private int maxCredits = 24;
     private final Map<String, Enrollment> enrollments = new LinkedHashMap<>();
 
-    public Student(String id, String fullName, String email){
+    public Student(String id, String fullName, String email){ this(id, fullName, email, null); }
+    public Student(String id, String fullName, String email, String phone){
         super(id, fullName, email);
         this.status = Status.ACTIVE;
+        this.phone = phone;
     }
     public void deactivate(){ this.status = Status.INACTIVE; }
     public void suspend(){ this.status = Status.SUSPENDED; }
@@ -61,3 +63,4 @@ public class Student extends Person {
             id, fullName, status, getGPAFormatted(), totalEnrolledCredits());
     }
 }
+
