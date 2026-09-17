@@ -1,6 +1,6 @@
 A Java-based terminal application designed to efficiently manage student records and course data within a campus environment. This project provides a structured and scalable way to handle academic information such as student details, course listings, and enrollments.
 
-## Overview
+# Overview
 
 Campus Course & Records Manager (AcadSync) is a lightweight academic management system built using Java. It is designed to simulate how universities manage student-course relationships using structured data and modular programming.
 
@@ -11,7 +11,7 @@ The system allows users to:
 - Handle structured academic datasets using CSV files
 - Execute operations via a command-line interface
 
-## Tech Stack
+# Tech Stack
 
 | Component | Technology |
 |---|---|
@@ -21,7 +21,7 @@ The system allows users to:
 | Data Storage | CSV Files |
 | Platform | macOS / Linux terminal-based execution |
 
-## Project Structure
+# Project Structure
 
 ```
 AcadSync/
@@ -38,7 +38,7 @@ AcadSync/
 └── USAGE.md               # Additional usage instructions
 ```
 
-## Features
+# Features
 
 **Student Record Management**
 Add, view, and manage student information efficiently
@@ -55,7 +55,7 @@ Lightweight and fast execution without GUI overhead
 **Modular Code Structure**
 Organized packages for scalability and maintainability
 
-## Sample Data
+# Sample Data
 
 The project includes preloaded datasets:
 
@@ -64,34 +64,34 @@ The project includes preloaded datasets:
 
 You can modify or expand these files to test different scenarios.
 
-## How to Run
+# How to Run
 
-### 1. Open Terminal
+## 1. Open Terminal
 Navigate to the project directory:
 
 ```bash
 cd ~/Projects/CCRM_complete
 ```
 
-### 2. Make Script Executable
+## 2. Make Script Executable
 
 ```bash
 chmod +x compile.sh
 ```
 
-### 3. Compile the Project
+## 3. Compile the Project
 
 ```bash
 ./compile.sh
 ```
 
-### 4. Run the Application
+## 4. Run the Application
 
 ```bash
 java -cp out edu.ccrm.cli.Main
 ```
 
-## Working Concept
+# Working Concept
 
 The system follows a structured approach:
 
@@ -102,14 +102,14 @@ The system follows a structured approach:
 
 This simulates a basic academic database system without requiring external dependencies.
 
-## Use Cases
+# Use Cases
 
 - Academic mini-projects
 - Understanding file-based data handling in Java
 - Learning modular project structuring
 - Practicing CLI-based application development
 
-## Future Improvements
+# Future Improvements
 
 - Add GUI using JavaFX or Swing
 - Integrate database (MySQL / PostgreSQL)
@@ -117,17 +117,12 @@ This simulates a basic academic database system without requiring external depen
 - Add REST API support
 - Deploy as a web-based application
 
-## Author
+# Author
 
 **Eshaan Abrol**
 24BEC10013
 Electronics and Communication Engineering
 VIT Bhopal University
 
-## License
+#License
 
-This project is for educational purposes and can be freely used or modified.
-
-## Support
-
-If you found this project helpful, consider giving it a ⭐ on GitHub.
