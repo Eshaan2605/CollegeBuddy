@@ -18,6 +18,7 @@ public class Enrollment {
         this.courseCredits = credits;
         this.enrolledAt = LocalDateTime.now();
         this.dropped = false;
+        this.semester = Semester.FALL; // default semester
     }
     public String getCourseCode(){ return courseCode; }
     public int getCourseCredits(){ return courseCredits; }
@@ -34,3 +35,4 @@ public class Enrollment {
         return String.format("Enrollment[%s,%dcr,grade=%s,dropped=%s]", courseCode, courseCredits, grade, dropped);
     }
 }
+
