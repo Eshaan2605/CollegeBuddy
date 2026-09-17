@@ -20,6 +20,11 @@ public class BackupService {
         Files.createDirectories(base);
     }
 
+    /**
+     * Creates a timestamped backup of the given source directory.
+     * @param sourceDir directory to back up
+     * @return path to the created backup
+     */
     public Path backupDirectory(Path sourceDir) throws IOException {
         String ts = LocalDateTime.now().format(FMT);
         Path target = base.resolve("backup_" + ts);
@@ -60,3 +65,4 @@ public class BackupService {
             .forEach(p -> { try{ Files.delete(p); } catch(Exception e){ throw new RuntimeException(e); } });
     }
 }
+
