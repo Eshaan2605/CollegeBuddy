@@ -80,7 +80,7 @@ public class Main {
         System.out.print("\nStudent ID: "); String sid = scanner.nextLine().trim();
         System.out.print("Course code: "); String cc = scanner.nextLine().trim();
         var oc = courseService.find(cc);
-        if(oc.isEmpty()){ System.out.println("No such course."); return; }
+        if(oc.isEmpty()){ System.out.println("Course not found. Please check the course code."); return; }
         try {
             studentService.enroll(sid, oc.get());
             System.out.println("Enrolled successfully.");
@@ -143,4 +143,5 @@ public class Main {
         System.out.println("Java SE is used for this project. See README for details.");
     }
 }
+
 
