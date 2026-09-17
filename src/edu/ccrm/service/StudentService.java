@@ -22,6 +22,7 @@ public class StudentService {
             .collect(Collectors.toList());
     }
 
+    /** Creates and persists a new student. Throws if ID is duplicate. */
     public Student createStudent(String id, String name, String email){
         if(ds.getStudents().containsKey(id))
             throw new IllegalArgumentException("Student ID already exists: " + id);
@@ -70,4 +71,5 @@ public class StudentService {
             .collect(Collectors.toList());
     }
 }
+
 
