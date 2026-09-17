@@ -12,6 +12,7 @@ public enum Grade {
     public int getPoints(){ return points; }
 
     /** Returns true if this grade is a passing grade (>= E). */
+    /** @return true if this grade qualifies for credit */
     public boolean isPassing(){ return this != F; }
 
     /** Returns a human-readable label for the grade. */
@@ -27,3 +28,4 @@ public enum Grade {
         };
     }
 }
+
