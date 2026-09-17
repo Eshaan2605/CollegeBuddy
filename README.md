@@ -139,7 +139,7 @@ This simulates a basic academic database system without requiring external depen
 
 ## Author
 
-Akash Kumar Pandey  
+Eshaan Abrol 24bec10013  
 Computer Science Undergraduate  
 VIT Bhopal University  
 
