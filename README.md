@@ -1,4 +1,4 @@
-# Overview Campus Course & Records Manager (CollegeBuddy)
+# Overview Campus Course & Records Manager - CCRM (CollegeBuddy)
 A Java-based terminal application designed to efficiently manage student records and course data within a campus environment. This project provides a structured and scalable way to handle academic information such as student details, course listings, and enrollments.
 
 # Overview
