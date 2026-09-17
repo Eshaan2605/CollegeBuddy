@@ -29,6 +29,7 @@ public class DataStore {
         instructors.clear();
     }
 
+    /** Seeds the data store with sample students, instructors, and courses for demonstration. */
     public void seedSample(){
         Student s1 = new Student("24BEC10013","Eshaan Abrol","eshaanabrol@gmail.com");
         Student s2 = new Student("24BEC10014","Aanchal Pandey","aanchal@example.com");
@@ -52,5 +53,6 @@ public class DataStore {
         courses.put(c3.getCode(), c3);
     }
 }
+
 
 
