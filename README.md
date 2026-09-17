@@ -1,4 +1,4 @@
-# Campus Course & Records Manager (AcadSync)
+# Campus Course & Records Manager (CollegeBuddy)
 
 A Java-based terminal application designed to efficiently manage student records and course data within a campus environment. This project provides a structured and scalable way to handle academic information such as student details, course listings, and enrollments.
 
@@ -6,7 +6,7 @@ A Java-based terminal application designed to efficiently manage student records
 
 ## Overview
 
-Campus Course & Records Manager (AcadSync) is a lightweight academic management system built using Java. It is designed to simulate how universities manage student-course relationships using structured data and modular programming.
+Campus Course & Records Manager (CollegeBuddy) is a lightweight academic management system built using Java. It is designed to simulate how universities manage student-course relationships using structured data and modular programming.
 
 The system allows users to:
 - Store and manage student records
@@ -29,7 +29,7 @@ The system allows users to:
 ## Project Structure
 
 ```
-AcadSync/
+CollegeBuddy/
 │
 ├── src/edu/ccrm/          # Core Java source files
 ├── sample-data/           # Sample CSV datasets
