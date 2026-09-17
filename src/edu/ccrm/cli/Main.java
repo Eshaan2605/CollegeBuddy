@@ -6,10 +6,9 @@ import edu.ccrm.io.*;
 import edu.ccrm.domain.*;
 import java.nio.file.Paths;
 import java.util.*;
-import java.io.Console;
 
 /**
- * A compact menu-driven CLI. Not exhaustive, but demonstrates required constructs.
+ * CLI entry point for the CollegeBuddy Campus Course and Records Manager.
  */
 public class Main {
     private static final Scanner scanner = new Scanner(System.in);
@@ -20,7 +19,7 @@ public class Main {
 
     public static void main(String[] args) {
         ds.seedSample();
-        System.out.println("--- Campus Course & Records Manager (CCRM) ---");
+        System.out.println("=== CollegeBuddy: Campus Course & Records Manager ===");
         boolean run = true;
         while(run){
             printMenu();
@@ -29,37 +28,41 @@ public class Main {
                 case "1" -> manageStudents();
                 case "2" -> manageCourses();
                 case "3" -> enrollFlow();
-                case "4" -> importExportFlow();
-                case "5" -> backupFlow();
-                case "6" -> { printPlatformNote(); run = false; }
-                default -> System.out.println("Unknown choice");
+                case "4" -> gradeFlow();
+                case "5" -> importExportFlow();
+                case "6" -> backupFlow();
+                case "7" -> reportFlow();
+                case "8" -> { printPlatformNote(); run = false; }
+                default -> System.out.println("Unknown choice. Please try again.");
             }
         }
-        System.out.println("Bye");
+        System.out.println("Thank you for using CollegeBuddy. Goodbye!");
     }
 
     private static void printMenu(){
-        System.out.println("1) Manage Students  2) Manage Courses  3) Enroll  4) Import/Export  5) Backup  6) Exit"); 
+        System.out.println("\n--- Main Menu ---");
+        System.out.println("1) Manage Students  2) Manage Courses  3) Enroll");
+        System.out.println("4) Assign Grade     5) Import/Export   6) Backup");
+        System.out.println("7) Reports          8) Exit");
         System.out.print("Choose: ");
     }
 
     private static void manageStudents(){
-        System.out.println("Students:");
-        studentService.listAll().forEach(s -> System.out.println(s));
+        System.out.println("\n-- Students --");
+        studentService.listAll().forEach(System.out::println);
         System.out.print("Create new student? y/n: ");
-        String ans = scanner.nextLine().trim();
-        if(ans.equalsIgnoreCase("y")){
+        if(scanner.nextLine().trim().equalsIgnoreCase("y")){
             System.out.print("id: "); String id = scanner.nextLine().trim();
             System.out.print("name: "); String name = scanner.nextLine().trim();
             System.out.print("email: "); String email = scanner.nextLine().trim();
             studentService.createStudent(id, name, email);
-            System.out.println("Created.");
+            System.out.println("Student created successfully.");
         }
     }
 
     private static void manageCourses(){
-        System.out.println("Courses:");
-        courseService.listAll().forEach(c -> System.out.println(c));
+        System.out.println("\n-- Courses --");
+        courseService.listAll().forEach(System.out::println);
         System.out.print("Add course? y/n: ");
         if(scanner.nextLine().trim().equalsIgnoreCase("y")){
             System.out.print("code: "); String code = scanner.nextLine().trim();
@@ -69,56 +72,73 @@ public class Main {
             System.out.print("department: "); String dept = scanner.nextLine().trim();
             Course c = new Course.Builder(code).title(title).credits(cr).instructor(inst).department(dept).build();
             courseService.createCourse(c);
-            System.out.println("Course added.");
+            System.out.println("Course added successfully.");
         }
     }
 
     private static void enrollFlow(){
-        System.out.print("student id: "); String sid = scanner.nextLine().trim();
-        System.out.print("course code: "); String cc = scanner.nextLine().trim();
+        System.out.print("\nStudent ID: "); String sid = scanner.nextLine().trim();
+        System.out.print("Course code: "); String cc = scanner.nextLine().trim();
         var oc = courseService.find(cc);
-        if(oc.isEmpty()){ System.out.println("No such course"); return; }
+        if(oc.isEmpty()){ System.out.println("No such course."); return; }
         try {
             studentService.enroll(sid, oc.get());
-            System.out.println("Enrolled");
+            System.out.println("Enrolled successfully.");
+        } catch(Exception e){
+            System.out.println("Error: " + e.getMessage());
+        }
+    }
+
+    private static void gradeFlow(){
+        System.out.print("\nStudent ID: "); String sid = scanner.nextLine().trim();
+        System.out.print("Course code: "); String cc = scanner.nextLine().trim();
+        System.out.print("Grade (S/A/B/C/D/E/F): "); String g = scanner.nextLine().trim();
+        try {
+            studentService.assignGrade(sid, cc, Grade.valueOf(g.toUpperCase()));
+            System.out.println("Grade assigned.");
         } catch(Exception e){
             System.out.println("Error: " + e.getMessage());
         }
     }
 
     private static void importExportFlow(){
-        System.out.println("1) Import Students  2) Import Courses  3) Export All"); System.out.print("opt: ");
+        System.out.println("1) Import Students  2) Import Courses  3) Export All");
+        System.out.print("opt: ");
         String opt = scanner.nextLine().trim();
         try{
             if(opt.equals("1")){
-                System.out.print("path: "); String p = scanner.nextLine().trim();
-                ioService.importStudents(Paths.get(p));
-                System.out.println("Imported students");
+                System.out.print("path: "); ioService.importStudents(Paths.get(scanner.nextLine().trim()));
+                System.out.println("Imported students.");
             } else if(opt.equals("2")){
-                System.out.print("path: "); String p = scanner.nextLine().trim();
-                ioService.importCourses(Paths.get(p));
-                System.out.println("Imported courses");
+                System.out.print("path: "); ioService.importCourses(Paths.get(scanner.nextLine().trim()));
+                System.out.println("Imported courses.");
             } else if(opt.equals("3")){
-                System.out.print("out dir: "); String od = scanner.nextLine().trim();
-                ioService.exportAll(Paths.get(od));
-                System.out.println("Exported");
+                System.out.print("out dir: "); ioService.exportAll(Paths.get(scanner.nextLine().trim()));
+                System.out.println("Exported.");
             }
         } catch(Exception e){ System.out.println("I/O error: " + e.getMessage()); }
     }
 
     private static void backupFlow(){
         try{
-            System.out.print("Source directory to backup (e.g. exports): "); String src = scanner.nextLine().trim();
-            System.out.print("Backup base dir (e.g. backups): "); String base = scanner.nextLine().trim();
+            System.out.print("Source directory: "); String src = scanner.nextLine().trim();
+            System.out.print("Backup base dir: "); String base = scanner.nextLine().trim();
             BackupService b = new BackupService(Paths.get(base));
             var dest = b.backupDirectory(Paths.get(src));
             System.out.println("Backed up to: " + dest);
-            long size = b.computeBackupSize(dest);
-            System.out.println("Backup size (bytes): " + size);
+            System.out.println("Backup size (bytes): " + b.computeBackupSize(dest));
         } catch(Exception e){ System.out.println("Backup error: " + e.getMessage()); }
     }
 
+    private static void reportFlow(){
+        System.out.println("\n-- Reports --");
+        System.out.println("Total students: " + studentService.listAll().size());
+        System.out.println("Total courses: " + courseService.listAll().size());
+        System.out.println("Top 3 students by GPA:");
+        studentService.getTopStudents(3).forEach(s -> System.out.println("  " + s));
+    }
+
     private static void printPlatformNote(){
-        System.out.println("Java SE vs ME vs EE: Java SE is used for this project. (See README for details.)");
+        System.out.println("Java SE is used for this project. See README for details.");
     }
 }
