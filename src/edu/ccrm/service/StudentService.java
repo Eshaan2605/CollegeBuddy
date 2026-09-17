@@ -50,7 +50,7 @@ public class StudentService {
                 throw new DuplicateEnrollmentException("Already enrolled: " + c.getCode());
         }
         if(s.totalEnrolledCredits() + c.getCredits() > s.getMaxCredits())
-            throw new MaxCreditLimitExceededException("Credit limit exceeded for student " + studentId);
+            throw new MaxCreditLimitExceededException("Maximum credit limit exceeded for student " + studentId);
         s.addEnrollment(new Enrollment(c.getCode(), c.getCredits()));
     }
 
@@ -72,6 +72,7 @@ public class StudentService {
             .collect(Collectors.toList());
     }
 }
+
 
 
 
