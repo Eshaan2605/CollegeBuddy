@@ -2,3 +2,6 @@
 out/
 *.jar
 .DS_Store
+*.log
+backups/
+exports/
