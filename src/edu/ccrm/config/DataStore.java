@@ -22,7 +22,7 @@ public class DataStore {
 
     // Updated seed with given students and courses
     public void seedSample(){
-        Student s1 = new Student("1","Eshaan Abrol 24bec10013","eshaanabrol@gmail.com");
+        Student s1 = new Student("1","Eshaan Abrol","eshaanabrol@gmail.com");
         Student s2 = new Student("2","Aanchal Pandey","aanchal@example.com");
         students.put(s1.getId(), s1);
         students.put(s2.getId(), s2);

@@ -139,8 +139,9 @@ This simulates a basic academic database system without requiring external depen
 
 ## Author
 
-Eshaan Abrol 24bec10013  
-Computer Science Undergraduate  
+Eshaan Abrol  
+24BEC10013  
+Electronics and Communication Engineering  
 VIT Bhopal University  
 
 ---
