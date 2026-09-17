@@ -62,6 +62,7 @@ public class StudentService {
             .setGrade(grade);
     }
 
+    /** Returns top N students sorted by GPA descending. */
     public List<Student> getTopStudents(int n){
         return ds.getStudents().values().stream()
             .sorted(Comparator.comparingDouble(Student::computeGPA).reversed())
@@ -69,3 +70,4 @@ public class StudentService {
             .collect(Collectors.toList());
     }
 }
+
