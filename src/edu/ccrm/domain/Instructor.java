@@ -19,9 +19,11 @@ public class Instructor extends Person {
 
     @Override
     public String role(){ return "Instructor"; }
+    public boolean isSenior(){ return designation.contains("Professor"); }
 
     @Override
     public String toString(){
         return String.format("Instructor[id=%s,name=%s,dept=%s,designation=%s]", id, fullName, department, designation);
     }
 }
+
