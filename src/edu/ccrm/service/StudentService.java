@@ -41,6 +41,7 @@ public class StudentService {
         s.deactivate();
     }
 
+    /** Enrolls student in a course; checks for duplicates and credit limits. */
     public void enroll(String studentId, Course c) throws DuplicateEnrollmentException, MaxCreditLimitExceededException {
         Student s = ds.getStudents().get(studentId);
         if(s == null) throw new StudentNotFoundException(studentId);
@@ -71,5 +72,6 @@ public class StudentService {
             .collect(Collectors.toList());
     }
 }
+
 
 
