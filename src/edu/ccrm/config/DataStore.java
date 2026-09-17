@@ -22,6 +22,7 @@ public class DataStore {
     public Map<String, Course> getCourses(){ return courses; }
     public Map<String, Instructor> getInstructors(){ return instructors; }
 
+    /** Clears all in-memory data. Use with caution. */
     public void clear(){
         students.clear();
         courses.clear();
@@ -49,3 +50,4 @@ public class DataStore {
         courses.put(c3.getCode(), c3);
     }
 }
+
