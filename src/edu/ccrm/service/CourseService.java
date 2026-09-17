@@ -51,6 +51,7 @@ public class CourseService {
             .collect(Collectors.toList());
     }
 
+    /** Counts courses offered by a specific department. */
     public long countByDepartment(String dept){
         return ds.getCourses().values().stream()
             .filter(c -> c.getDepartment().equalsIgnoreCase(dept))
@@ -61,3 +62,4 @@ public class CourseService {
         return ds.getCourses().values().stream().mapToInt(Course::getCredits).sum();
     }
 }
+
