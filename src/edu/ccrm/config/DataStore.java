@@ -47,7 +47,10 @@ public class DataStore {
         Course c3 = new Course.Builder("CSE3003").title("Data Structures and Algorithms").credits(4).instructor("Dr. Irfan Alam").semester(Semester.FALL).department("Computer Science").build();
         courses.put(c1.getCode(), c1);
         courses.put(c2.getCode(), c2);
+        Course c4 = new Course.Builder("ECE3001").title("Signals and Systems").credits(3).instructor("Dr. Meena Rao").semester(Semester.FALL).department("Electronics").build();
+        courses.put(c4.getCode(), c4);
         courses.put(c3.getCode(), c3);
     }
 }
+
 
