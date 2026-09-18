@@ -31,7 +31,7 @@ public class Main {
                 case "4" -> gradeFlow();
                 case "5" -> importExportFlow();
                 case "6" -> backupFlow();
-                case "7" -> reportFlow(); System.out.println(");
+                case "7" -> reportFlow();
                 case "8" -> { printPlatformNote(); run = false; }
                 default -> System.out.println("Unknown choice. Please try again.");
             }
